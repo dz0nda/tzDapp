@@ -1,0 +1,101 @@
+import React from 'react';
+import { Layout } from 'antd';
+
+import { DAppProvider, useAccountPkh, useConnect, useOnBlock, useTezos} from "../../dapp/dapp";
+import { APP_NAME, NETWORK} from '../../dapp/default';
+
+import ConnectionContainer from '../../containers/ConnectionContainer';
+
+import './App.css';
+
+const { Header, Footer, Sider, Content } = Layout;
+
+function ConnexionButton() {
+  const connect = useConnect()
+  const handleConnect = React.useCallback(async () => {
+    try {
+      await connect(NETWORK, { forcePermission: true })
+    } catch (err) {
+      console.error(err.message)
+    }
+  }, [connect])
+  return <button onClick={handleConnect}>Connect account</button>
+}
+
+const Page = (props: { children: string | number | boolean | {} | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactNodeArray | React.ReactPortal | null | undefined; }) => {
+  return <div className="App"> {props.children} </div>
+}
+
+function ConnectionSection() {
+  const connect = useConnect()
+  const accountPkh = useAccountPkh()
+  const tezos = useTezos()
+  const [balance, setBalance] = React.useState(null)
+  const handleConnect = React.useCallback(async () => {
+    try {
+      await connect(NETWORK, { forcePermission: true })
+    } catch (err) {
+      console.error(err.message)
+    }
+  }, [connect])
+
+
+  const accountPkhPreview = React.useMemo(() => {
+    if (!accountPkh) return undefined
+    else {
+      console.log('account', accountPkh);
+      const accPkh = (accountPkh as unknown) as string
+      const ln = accPkh.length
+      return `${accPkh.slice(0, 7)}...${accPkh.slice(ln - 4, ln)}`
+    }
+  }, [accountPkh])
+
+  const loadBalance = React.useCallback(async () => {
+    // console.log(loadBalance)
+    if (tezos) {
+      const tezosOk = tezos as any
+      const bal = await tezosOk.tz.getBalance(accountPkh)
+      setBalance(tezosOk.format('mutez', 'tz', bal).toString())
+    }
+  }, [tezos, accountPkh, setBalance])
+
+  React.useEffect(() => {
+    loadBalance()
+  }, [loadBalance])
+
+  useOnBlock(tezos, loadBalance)
+
+  return <div>
+    <div style={{ display: "grid", gridTemplateColumns: '1fr 1fr 1fr', margin: '0 auto', width: "500px" }}>
+      <div>{balance}</div>
+      <div>{accountPkhPreview}</div>
+      <button onClick={handleConnect}>Connect account</button>
+    </div>
+  </div>
+
+}
+
+function PageComponent() {
+  return (
+    <Page> 
+      <ConnectionSection></ConnectionSection>
+    </Page>
+  );
+}
+
+function App() {
+    return (
+      <DAppProvider appName={APP_NAME}>
+          <React.Suspense fallback={null}>
+          <Layout>
+            <ConnectionContainer />
+            {/* <Header>Header</Header>
+            <Content>Content</Content>
+            <Footer>Footer</Footer> */}
+          </Layout>
+          </React.Suspense>
+      </DAppProvider>
+  );
+}
+
+export default App;

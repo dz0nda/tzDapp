@@ -1,0 +1,10 @@
+parameter (nat %store);
+storage   nat;
+code
+  {
+    CAR;        # @parameter
+    # == store ==
+    # self.data.storedValue = params # @parameter
+    NIL operation; # list operation : @parameter
+    PAIR;       # pair (list operation) @parameter
+  };

@@ -1,0 +1,22 @@
+{
+  "contractName": "Increment",
+  "abi": [],
+  "michelson": "[ { \"prim\": \"parameter\",\n    \"args\":\n      [ { \"prim\": \"or\",\n          \"args\":\n            [ { \"prim\": \"or\",\n                \"args\":\n                  [ { \"prim\": \"int\", \"annots\": [ \"%decrement\" ] },\n                    { \"prim\": \"int\", \"annots\": [ \"%increment\" ] } ] },\n              { \"prim\": \"unit\", \"annots\": [ \"%reset\" ] } ] } ] },\n  { \"prim\": \"storage\", \"args\": [ { \"prim\": \"int\" } ] },\n  { \"prim\": \"code\",\n    \"args\":\n      [ [ { \"prim\": \"UNPAIR\" },\n          { \"prim\": \"IF_LEFT\",\n            \"args\":\n              [ [ { \"prim\": \"IF_LEFT\",\n                    \"args\":\n                      [ [ { \"prim\": \"SWAP\" }, { \"prim\": \"SUB\" } ],\n                        [ { \"prim\": \"ADD\" } ] ] } ],\n                [ { \"prim\": \"DROP\", \"args\": [ { \"int\": \"2\" } ] },\n                  { \"prim\": \"PUSH\",\n                    \"args\": [ { \"prim\": \"int\" }, { \"int\": \"0\" } ] } ] ] },\n          { \"prim\": \"NIL\", \"args\": [ { \"prim\": \"operation\" } ] },\n          { \"prim\": \"PAIR\" } ] ] } ]",
+  "source": "type storage is int\n\ntype parameter is\n  Increment of int\n| Decrement of int\n| Reset\n\ntype return is list (operation) * storage\n\n// Two entrypoints\n\nfunction add (const store : storage; const delta : int) : storage is \n  store + delta\n\nfunction sub (const store : storage; const delta : int) : storage is \n  store - delta\n\n(* Main access point that dispatches to the entrypoints according to\n   the smart contract parameter. *)\n   \nfunction main (const action : parameter; const store : storage) : return is\n ((nil : list (operation)),    // No operations\n  case action of\n    Increment (n) -> add (store, n)\n  | Decrement (n) -> sub (store, n)\n  | Reset         -> 0\n  end)\n",
+  "sourcePath": "/Users/dzonda/Dev/tzDapp/tezos/contracts/Increment.ligo",
+  "compiler": {
+    "name": "ligo",
+    "version": "next"
+  },
+  "networks": {
+    "NetXz969SFaFn8k": {
+      "events": {},
+      "links": {},
+      "address": "KT1KX1tDMH5Fc9oNFhYPRn82erCQki8JNZqx",
+      "transactionHash": "op3tJwgaRBGzd9jXYS7ganmJAmb3BZMvkrmRqgpR6pEd9ZdZNsp"
+    }
+  },
+  "schemaVersion": "3.2.0-tezos.1",
+  "updatedAt": "2021-08-28T18:20:19.597Z",
+  "networkType": "tezos"
+}

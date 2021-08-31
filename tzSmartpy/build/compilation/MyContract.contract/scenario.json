@@ -1,0 +1,46 @@
+[
+    {
+        "kind": "test",
+        "scenario": [
+            {
+                "action": "newContract",
+                "name": "MyContract",
+                "id": "(static_id 0 (\"MyContract.contract.ts\" 5))",
+                "export": "(\n            template_id (static_id 0 (\"MyContract.contract.ts\" 5))\n            storage (record (\"MyContract.contract.ts\" 7) (storedValue (literal (nat 1) (\"MyContract.contract.ts\" 8))))\n            storage_type ((record ((storedValue \"nat\")) None))\n            messages ((store True False False True (\"MyContract.contract.ts\" 11) ((set_type (params (\"MyContract.contract.ts\" 11)) \"nat\" (\"MyContract.contract.ts\" 12)) (set (attr (data) \"storedValue\" (\"MyContract.contract.ts\" 14)) (params (\"MyContract.contract.ts\" 14)) (\"MyContract.contract.ts\" 14)))))\n            flags ()\n            globals ()\n            views ()\n            entry_points_layout ()\n            initial_metadata ()\n            balance (literal (mutez 0) (\"MyContract.contract.ts\" 5))\n        )",
+                "line_no": "(\"MyContract.contract.ts\" 5)",
+                "show": true,
+                "accept_unknown_types": false
+            },
+            {
+                "action": "message",
+                "line_no": "(\"MyContract.contract.ts\" 20)",
+                "message": "store",
+                "id": "(static_id 0 (\"MyContract.contract.ts\" 20))",
+                "params": "(literal (nat 2) (\"MyContract.contract.ts\" 20))"
+            }
+        ],
+        "name": "MyContract",
+        "longname": "MyContract",
+        "shortname": "MyContract",
+        "profile": false,
+        "show": true
+    },
+    {
+        "kind": "compilation",
+        "name": "my_contract_compiled",
+        "scenario": [
+            {
+                "action": "newContract",
+                "name": "MyContract",
+                "id": "(static_id 0 (\"MyContract.contract.ts\" 5))",
+                "export": "(\n            template_id (static_id 0 (\"MyContract.contract.ts\" 5))\n            storage (record (\"MyContract.contract.ts\" 7) (storedValue (literal (nat 1) (\"MyContract.contract.ts\" 8))))\n            storage_type ((record ((storedValue \"nat\")) None))\n            messages ((store True False False True (\"MyContract.contract.ts\" 11) ((set_type (params (\"MyContract.contract.ts\" 11)) \"nat\" (\"MyContract.contract.ts\" 12)) (set (attr (data) \"storedValue\" (\"MyContract.contract.ts\" 14)) (params (\"MyContract.contract.ts\" 14)) (\"MyContract.contract.ts\" 14)))))\n            flags ()\n            globals ()\n            views ()\n            entry_points_layout ()\n            initial_metadata ()\n            balance (literal (mutez 0) (\"MyContract.contract.ts\" 5))\n        )",
+                "line_no": "(\"MyContract.contract.ts\" 5)",
+                "show": true,
+                "accept_unknown_types": false
+            }
+        ],
+        "longname": "my_contract_compiled",
+        "shortname": "my_contract_compiled",
+        "show": false
+    }
+]

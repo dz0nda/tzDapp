@@ -1,0 +1,80 @@
+[
+    {
+        "kind": "test",
+        "scenario": [
+            {
+                "action": "html",
+                "inner": "Originating Contract",
+                "line_no": "(\"Template.contract.ts\" 16)",
+                "tag": "h1"
+            },
+            {
+                "action": "newContract",
+                "name": "Minimal",
+                "id": "(static_id 0 (\"Template.contract.ts\" 3))",
+                "export": "(\n            template_id (static_id 0 (\"Template.contract.ts\" 3))\n            storage (record (\"Template.contract.ts\" 5) (value (literal (nat 1) (\"Template.contract.ts\" 6))))\n            storage_type ((record ((value \"nat\")) None))\n            messages ((ep True False False True (\"Template.contract.ts\" 9) ((set_type (params (\"Template.contract.ts\" 9)) \"nat\" (\"Template.contract.ts\" 10)) (set (attr (data) \"value\" (\"Template.contract.ts\" 11)) (params (\"Template.contract.ts\" 11)) (\"Template.contract.ts\" 11)))))\n            flags ()\n            globals ()\n            views ()\n            entry_points_layout ()\n            initial_metadata ()\n            balance (literal (mutez 0) (\"Template.contract.ts\" 3))\n        )",
+                "line_no": "(\"Template.contract.ts\" 3)",
+                "show": true,
+                "accept_unknown_types": false
+            },
+            {
+                "action": "html",
+                "inner": "Initial value must be 1.",
+                "line_no": "(\"Template.contract.ts\" 19)",
+                "tag": "p"
+            },
+            {
+                "action": "verify",
+                "condition": "(eq (attr (contract_data (static_id 0 (\"Template.contract.ts\" 3)) (\"Template.contract.ts\" 20)) \"value\" (\"Template.contract.ts\" 20)) (literal (intOrNat 1) (\"Template.contract.ts\" 20)) (\"Template.contract.ts\" 20))",
+                "line_no": "(\"Template.contract.ts\" 20)"
+            },
+            {
+                "action": "html",
+                "inner": "Calling entry point (ep) with value 10.",
+                "line_no": "(\"Template.contract.ts\" 22)",
+                "tag": "h2"
+            },
+            {
+                "action": "message",
+                "line_no": "(\"Template.contract.ts\" 23)",
+                "message": "ep",
+                "id": "(static_id 0 (\"Template.contract.ts\" 23))",
+                "params": "(literal (nat 10) (\"Template.contract.ts\" 23))"
+            },
+            {
+                "action": "html",
+                "inner": "Final value must be 10.",
+                "line_no": "(\"Template.contract.ts\" 25)",
+                "tag": "p"
+            },
+            {
+                "action": "verify",
+                "condition": "(eq (attr (contract_data (static_id 0 (\"Template.contract.ts\" 3)) (\"Template.contract.ts\" 26)) \"value\" (\"Template.contract.ts\" 26)) (literal (intOrNat 10) (\"Template.contract.ts\" 26)) (\"Template.contract.ts\" 26))",
+                "line_no": "(\"Template.contract.ts\" 26)"
+            }
+        ],
+        "name": "Minimal",
+        "longname": "Minimal",
+        "shortname": "Minimal",
+        "profile": false,
+        "show": true
+    },
+    {
+        "kind": "compilation",
+        "name": "minimal",
+        "scenario": [
+            {
+                "action": "newContract",
+                "name": "Minimal",
+                "id": "(static_id 0 (\"Template.contract.ts\" 3))",
+                "export": "(\n            template_id (static_id 0 (\"Template.contract.ts\" 3))\n            storage (record (\"Template.contract.ts\" 5) (value (literal (nat 1) (\"Template.contract.ts\" 6))))\n            storage_type ((record ((value \"nat\")) None))\n            messages ((ep True False False True (\"Template.contract.ts\" 9) ((set_type (params (\"Template.contract.ts\" 9)) \"nat\" (\"Template.contract.ts\" 10)) (set (attr (data) \"value\" (\"Template.contract.ts\" 11)) (params (\"Template.contract.ts\" 11)) (\"Template.contract.ts\" 11)))))\n            flags ()\n            globals ()\n            views ()\n            entry_points_layout ()\n            initial_metadata ()\n            balance (literal (mutez 0) (\"Template.contract.ts\" 3))\n        )",
+                "line_no": "(\"Template.contract.ts\" 3)",
+                "show": true,
+                "accept_unknown_types": false
+            }
+        ],
+        "longname": "minimal",
+        "shortname": "minimal",
+        "show": false
+    }
+]

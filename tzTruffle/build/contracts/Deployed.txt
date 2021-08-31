@@ -1,0 +1,53 @@
+1_deploy_raffle.js
+==================
+
+   Deploying raffle
+   ------------------
+   > operation hash:      op3rZsq6RnvhAhWYwFu6NDXqwM2W4Hi3rt7ba7kF3Jp7T4dHYTp
+   > Blocks: 0            Seconds: 8
+   > contract address:    KT1Dz2Q2rtxNxfKNmeSdajeikM4gU5oTSh8B
+   > block number:        394442
+   > block timestamp:     2021-08-28T18:20:03Z
+   > account:             tz1aE4x6BsSCVwfpNBcDGrnEbtBSESvzmZws
+   > balance:             17865.241361
+   > gas used:            1843
+   > storage used:        2761 bytes
+   > fee spent:           3.279 mtz
+   > burn cost:           0.7545 tez
+   > value sent:          0 XTZ
+   > total cost:          0.757779 XTZ
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:            0.757779 XTZ
+
+
+2_deploy_increment.js
+=====================
+
+   Deploying Increment
+   ---------------------
+   > operation hash:      op3tJwgaRBGzd9jXYS7ganmJAmb3BZMvkrmRqgpR6pEd9ZdZNsp
+   > Blocks: 1            Seconds: 12
+   > contract address:    KT1KX1tDMH5Fc9oNFhYPRn82erCQki8JNZqx
+   > block number:        394443
+   > block timestamp:     2021-08-28T18:20:18Z
+   > account:             tz1aE4x6BsSCVwfpNBcDGrnEbtBSESvzmZws
+   > balance:             17865.140299
+   > gas used:            1410
+   > storage used:        145 bytes
+   > fee spent:           0.562 mtz
+   > burn cost:           0.1005 tez
+   > value sent:          0 XTZ
+   > total cost:          0.101062 XTZ
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:            0.101062 XTZ
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.858841 XTZ
+
