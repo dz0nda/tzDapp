@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/tzDapp/static/js/main.5b5dd973.chunk.js",
+    "main.js.map": "/tzDapp/static/js/main.5b5dd973.chunk.js.map",
+    "runtime-main.js": "/tzDapp/static/js/runtime-main.4400c0c1.js",
+    "runtime-main.js.map": "/tzDapp/static/js/runtime-main.4400c0c1.js.map",
+    "static/js/2.ab7bd901.chunk.js": "/tzDapp/static/js/2.ab7bd901.chunk.js",
+    "static/js/2.ab7bd901.chunk.js.map": "/tzDapp/static/js/2.ab7bd901.chunk.js.map",
+    "static/js/3.6b2f46b3.chunk.js": "/tzDapp/static/js/3.6b2f46b3.chunk.js",
+    "static/js/3.6b2f46b3.chunk.js.map": "/tzDapp/static/js/3.6b2f46b3.chunk.js.map",
+    "index.html": "/tzDapp/index.html",
+    "static/js/2.ab7bd901.chunk.js.LICENSE.txt": "/tzDapp/static/js/2.ab7bd901.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4400c0c1.js",
+    "static/js/2.ab7bd901.chunk.js",
+    "static/js/main.5b5dd973.chunk.js"
+  ]
+}
